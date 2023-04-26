@@ -1,0 +1,19 @@
+"""
+344. Reverse String
+Python Easy
+
+Write a function that reverses a string. The input string is given as an array of characters s.
+You must do this by modifying the input array in-place with O(1) extra memory.
+"""
+
+class Solution(object):
+    def reverseString(self, s):
+        start = 0
+        end = -1
+        for i in range(0, len(s)):
+            if start < (len(s))//2:
+                hold = s[start]
+                s[start] = s[end]
+                s[end] = hold
+                start = start +1
+                end = end -1
